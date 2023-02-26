@@ -2,3 +2,5 @@ build/routes/loginRoutes.js
 build/index.js
 build/index.js
 build/index.js
+build/controllers/LogonController.js
+build/controllers/decorators/routes.js
