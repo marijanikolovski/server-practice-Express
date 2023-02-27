@@ -4,3 +4,8 @@ build/index.js
 build/index.js
 build/controllers/LogonController.js
 build/controllers/decorators/routes.js
+build/controllers/decorators/controller.js
+build/controllers/LoginController.js
+build/index.js
+build/controllers/decorators/index.js
+build/AppRouter.js
