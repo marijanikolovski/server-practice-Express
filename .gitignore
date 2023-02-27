@@ -9,3 +9,4 @@ build/controllers/LoginController.js
 build/index.js
 build/controllers/decorators/index.js
 build/AppRouter.js
+build/controllers/decorators/Methods.js
