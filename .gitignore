@@ -13,3 +13,5 @@ build/controllers/decorators/Methods.js
 build/controllers/decorators/MetadataKeys.js
 build/controllers/decorators/use.js
 build/controllers/decorators/bodyValidator.js
+build/controllers/RootController.js
+build/index.js
