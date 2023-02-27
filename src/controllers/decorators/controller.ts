@@ -1,6 +1,14 @@
 import 'reflect-metadata';
 import { AppRouter } from '../../AppRouter';
 import { Mehods } from './Methods';
+import { MetadataKeys } from './MetadataKeys';
+import { NextFunction, RequestHandler, Request, Response } from 'express';
+
+function bodyValidator(keys: string): RequestHandler {
+  return function(req: Request, res: Response, next: NextFunction) {
+    
+  }
+}
 
 export function controller(routePrefix: string) {
   return function(target: Function) {
@@ -8,11 +16,16 @@ export function controller(routePrefix: string) {
 
     for (let key in target.prototype) {
       const routeHandler = target.prototype[key];
-      const path = Reflect.getMetadata('path', target.prototype, key)
-      const method: Mehods = Reflect.getMetadata('method', target.prototype, key);
-      
+      const path = Reflect.getMetadata(MetadataKeys.path, target.prototype, key)
+      const method: Mehods = Reflect.getMetadata(MetadataKeys.method, target.prototype, key);
+      const middlewares = Reflect.getMetadata(
+        MetadataKeys.middleware,
+        target.prototype, 
+        key
+      ) || [];
+
       if (path) {
-        router[method](`${routePrefix}${path}`, routeHandler);
+        router[method](`${routePrefix}${path}`, ...middlewares,routeHandler);
       }
     }
   };

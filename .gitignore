@@ -10,3 +10,6 @@ build/index.js
 build/controllers/decorators/index.js
 build/AppRouter.js
 build/controllers/decorators/Methods.js
+build/controllers/decorators/MetadataKeys.js
+build/controllers/decorators/use.js
+build/controllers/decorators/bodyValidator.js
